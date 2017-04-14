@@ -42,6 +42,11 @@ behind the scenes.
 
 Here are some ideas for things that might work.
 
+Punt completely, simply include the entire lodash.js on the page separately from
+a Closure output bundle, and create Closure externs for Lodash. This sounds like
+not much fun at all - and also means including the whole library instead of only
+the pieces imported.
+
 Hope the Closure Compiler team fixes that `INTERNAL ERROR`.
 
 Consider a fork of `lodash-es`, mechanically bulk-edited to avoid the error
