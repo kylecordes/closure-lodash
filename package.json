@@ -1,0 +1,26 @@
+{
+  "name": "@oasisdigital/closure-lodash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "shx rm -rf dist build",
+    "tsc": "tsc",
+    "closure": "java -jar node_modules/google-closure-compiler/compiler.jar --flagfile closure.conf",
+    "closure-debug": "java -jar node_modules/google-closure-compiler/compiler.jar --flagfile closure.conf --debug --formatting PRETTY_PRINT",
+    "lodash-index-hack": "shx cp node_modules/lodash-es/lodash.js node_modules/lodash-es/index.js",
+    "start": "node dist/bundle.js",
+    "test": "run-s clean tsc lodash-index-hack closure start"
+  },
+  "author": "Kyle Cordes (http://kylecordes.com)",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/lodash-es": "ts2.2",
+    "google-closure-compiler": "20170409.0.0",
+    "lodash-es": "^4.17.4",
+    "npm-run-all": "^4.0.2",
+    "shx": "^0.2.2",
+    "typescript": "^2.2.2"
+  }
+}
